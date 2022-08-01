@@ -5,10 +5,12 @@ const { graphqlHTTP } = require("express-graphql")
 const colors = require("colors")
 const connectDB = require("./config/db")
 const app = express()
+const cors = require("cors")
 
 // Connect to MongoDB
 connectDB()
 
+app.use(cors())
 app.use("/graphql", graphqlHTTP({
   schema: require("./schema/schema"),
   graphiql: process.env.NODE_ENV === "development" ? true : false
