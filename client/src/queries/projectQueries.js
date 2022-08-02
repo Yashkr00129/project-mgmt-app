@@ -24,3 +24,5 @@ export const GET_PROJECT = gql`
       }
     }
   }`
+
+
